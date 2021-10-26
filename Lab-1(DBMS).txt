@@ -1,0 +1,213 @@
+
+SQL> create table student (RollNo number(2), Name varchar2(20), Branch varchar(3), Marks number(3), Semester number(2), Section varchar(2));
+
+Table created.
+
+SQL> alter table student modify RollNo number(5);
+
+Table altered.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 213
+Enter value for name: Rajan Kumar
+Enter value for branch: CSE
+Enter value for marks: 22
+Enter value for semester: 5
+Enter value for section: C
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(213, 'Rajan Kumar', 'CSE', 22, 5, 'C')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 216
+Enter value for name: Raman Kapur
+Enter value for branch: CSE
+Enter value for marks: 21
+Enter value for semester: 5
+Enter value for section: C
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(216, 'Raman Kapur', 'CSE', 21, 5, 'C')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 241
+Enter value for name: Sakshi Singh
+Enter value for branch: CSE
+Enter value for marks: 25
+Enter value for semester: 5
+Enter value for section: D
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(241, 'Sakshi Singh', 'CSE', 25, 5, 'D')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 169
+Enter value for name: Naman Baranwal
+Enter value for branch: CSE
+Enter value for marks: 23
+Enter value for semester: 5
+Enter value for section: C
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(169, 'Naman Baranwal', 'CSE', 23, 5, 'C')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 236
+Enter value for name: Sachin Tiwari
+Enter value for branch: CSE
+Enter value for marks: 30
+Enter value for semester: 5
+Enter value for section: C
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(236, 'Sachin Tiwari', 'CSE', 30, 5, 'C')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 219
+Enter value for name: Raunaq Soneja
+Enter value for branch: CSE
+Enter value for marks: 30
+Enter value for semester: 5
+Enter value for section: C
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(219, 'Raunaq Soneja', 'CSE', 30, 5, 'C')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 178
+Enter value for name: Nilesh Kumar
+Enter value for branch: IT
+Enter value for marks: 15
+Enter value for semester: 5
+Enter value for section: D
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(178, 'Nilesh Kumar', 'IT', 15, 5, 'D')
+
+1 row created.
+
+SQL> /
+Enter value for rollno: 220
+Enter value for name: Ravi Prakash
+Enter value for branch: ECE
+Enter value for marks: 06
+Enter value for semester: 5
+Enter value for section: B
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(220, 'Ravi Prakash', 'ECE', 06, 5, 'B')
+
+1 row created.
+
+SQL> insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section');
+Enter value for rollno: 166
+Enter value for name: Rajat
+Enter value for branch: EN
+Enter value for marks: 23
+Enter value for semester: 5
+Enter value for section: c
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(166, 'Rajat', 'EN', 23, 5, 'c')
+
+1 row created.
+
+SQL> /
+Enter value for rollno: 001
+Enter value for name: Ashutosh Sharma
+Enter value for branch: ME
+Enter value for marks: 26
+Enter value for semester: 5
+Enter value for section: A
+old   1: insert into student values(&RollNo, '&Name', '&Branch', &Marks, &Semester, '&Section')
+new   1: insert into student values(001, 'Ashutosh Sharma', 'ME', 26, 5, 'A')
+
+1 row created.
+
+SQL> select * from student;
+
+    ROLLNO NAME                 BRA      MARKS   SEMESTER SE
+---------- -------------------- --- ---------- ---------- --
+       213 Rajan Kumar          CSE         22          5 C
+       216 Raman Kapur          CSE         21          5 C
+       241 Sakshi Singh         CSE         25          5 D
+       169 Naman Baranwal       CSE         23          5 C
+       236 Sachin Tiwari        CSE         30          5 C
+       219 Raunaq Soneja        CSE         30          5 C
+       178 Nilesh Kumar         IT          15          5 D
+       220 Ravi Prakash         ECE          6          5 B
+       166 Rajat                EN          23          5 c
+         1 Ashutosh Sharma      ME          26          5 A
+
+10 rows selected.
+
+
+SQL> select name, branch from student where branch=any('CSE','IT','ECE');
+
+NAME                 BRA
+-------------------- ---
+Rajan Kumar          CSE
+Raman Kapur          CSE
+Sakshi Singh         CSE
+Naman Baranwal       CSE
+Sachin Tiwari        CSE
+Raunaq Soneja        CSE
+Nilesh Kumar         IT
+Ravi Prakash         ECE
+
+8 rows selected.
+
+
+SQL> select name, branch from student where branch in('CSE','IT','ECE');
+
+NAME                 BRA
+-------------------- ---
+Rajan Kumar          CSE
+Raman Kapur          CSE
+Sakshi Singh         CSE
+Naman Baranwal       CSE
+Sachin Tiwari        CSE
+Raunaq Soneja        CSE
+Nilesh Kumar         IT
+Ravi Prakash         ECE
+
+8 rows selected.
+
+SQL> select name, branch from student where branch=all('CSE','IT','ECE');
+
+no rows selected
+
+SQL> select name,marks from student where marks between 15 and 26;
+
+NAME                      MARKS
+-------------------- ----------
+Rajan Kumar                  22
+Raman Kapur                  21
+Sakshi Singh                 25
+Naman Baranwal               23
+Nilesh Kumar                 15
+Rajat                        23
+Ashutosh Sharma              26
+
+7 rows selected.
+
+
+SQL> select name,section,marks from student where exists(select section from student where section='A') and marks between 20 and 30;
+
+NAME                 SE      MARKS
+-------------------- -- ----------
+Rajan Kumar          C          22
+Raman Kapur          C          21
+Sakshi Singh         D          25
+Naman Baranwal       C          23
+Sachin Tiwari        C          30
+Raunaq Soneja        C          30
+Rajat                c          23
+Ashutosh Sharma      A          26
+
+8 rows selected.
+
+SQL>
