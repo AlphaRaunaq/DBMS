@@ -210,4 +210,12 @@ Ashutosh Sharma      A          26
 
 8 rows selected.
 
-SQL>
+SQL> select name from student where name like 'R%';
+
+NAME
+--------------------
+Rajan Kumar
+Raman Kapur
+Raunaq Soneja
+Ravi Prakash
+Rajat
